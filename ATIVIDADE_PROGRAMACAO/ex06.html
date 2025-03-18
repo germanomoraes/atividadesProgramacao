@@ -1,0 +1,25 @@
+<script>
+    /* Construir um algoritmo que calcule a média aritmética de vários valores inteiros
+positivos, lidos externamente. O final da leitura acontecerá quando for lido um valor
+negativo. */
+
+    let soma = 0
+    let contador = 0
+    let numero
+
+    do {
+        numero = Number(prompt("Digite um número inteiro positivo (digite um número negativo para sair):"))
+        if (numero >= 0) {
+            soma += numero
+            contador++
+        }
+    } while (numero >= 0)
+
+    if (contador > 0) {
+        let media = soma / contador;
+        alert("A média aritmética dos valores positivos digitados é: " + media)
+    } else {
+        alert("Nenhum valor positivo foi digitado.")
+    }
+
+</script>

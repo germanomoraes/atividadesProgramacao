@@ -1,0 +1,25 @@
+
+<script>
+    /* O algoritmo deverá ler, além das notas, o código do aluno e deverá ser encerrado
+quando o código for igual a zero. */
+
+do {
+        codigo = Number(prompt("Digite o código do aluno (digite 0 para sair):"))
+        if (codigo !== 0) {
+            let notas = []
+            for (let i = 1; i <= 3; i++) {
+                let nota = parseFloat(prompt("Digite a nota " + i + " do aluno " + codigo + ":"))
+                notas.push(nota)
+            }
+
+            let soma = notas.reduce((acc, nota) => acc + nota, 0)
+            let media = soma / notas.length
+
+            alert("A média aritmética das 3 notas do aluno " + codigo + " é: " + media)
+        }
+    } while (codigo !== 0)
+
+    alert("Programa encerrado.")
+
+</script>
+

@@ -1,0 +1,50 @@
+
+<script> 
+/* A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dados
+sobre o salário e número de filhos. A prefeitura deseja saber:
+a. média do salário da população;
+b. média do número de filhos;
+c. maior salário;
+d. percentual de pessoas com salário até R$100,00.
+O final da leitura de dados se dará com a entrada de um salário negativo. */
+
+let somaSalarios = 0
+    let somaFilhos = 0
+    let contador = 0
+    let maiorSalario = -Infinity
+    let salariosAte100 = 0
+    let salario
+
+    do {
+        salario = parseFloat(prompt("Digite o salário (digite um valor negativo para sair):"))
+        if (salario >= 0) {
+            let numeroFilhos = parseInt(prompt("Digite o número de filhos:"))
+
+            somaSalarios += salario;
+            somaFilhos += numeroFilhos
+            contador++
+
+            if (salario > maiorSalario) {
+                maiorSalario = salario
+            }
+
+            if (salario <= 100) {
+                salariosAte100++
+            }
+        }
+    } while (salario >= 0)
+
+    if (contador > 0) {
+        let mediaSalarios = somaSalarios / contador;
+        let mediaFilhos = somaFilhos / contador;
+        let percentualSalariosAte100 = (salariosAte100 / contador) * 100
+
+        alert("Média do salário da população: " + mediaSalarios)
+        alert("Média do número de filhos: " + mediaFilhos)
+        alert("Maior salário: " + maiorSalario)
+        alert("Percentual de pessoas com salário até R$100,00: " + percentualSalariosAte100 + "%")
+    } else {
+        alert("Nenhum dado foi coletado.")
+    }
+
+</script>

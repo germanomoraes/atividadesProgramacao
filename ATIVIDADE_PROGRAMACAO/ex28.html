@@ -1,0 +1,27 @@
+
+<script> 
+
+/* Peça ao usuário um número inteiro positivo e calcule o seu fatorial usando um laço for.
+Exemplo de entrada:
+Número: 5
+Saída esperada:
+5! = 120 */
+
+function calcule_o_fatorial() {
+        const number = parseInt(prompt("Digite um número inteiro positivo:"), 10);
+        if (isNaN(number) || number < 0) {
+            alert("Por favor, insira um número inteiro positivo.");
+            return;
+        }
+
+        let fatorial = 1;
+        for (let i = 1; i <= number; i++) {
+            fatorial *= i;
+        }
+
+        alert(`${number}! = ${fatorial}`);
+    }
+
+    calcule_o_fatorial();
+
+</script>

@@ -1,0 +1,19 @@
+
+<script> 
+    /* Solicite ao usuário, e armazene-as. Pare de pedir quando ele digitar uma idade
+negativa. */ 
+
+let idades = []
+    let idade
+
+    do {
+        idade = parseInt(prompt("Digite uma idade (digite um número negativo para sair:"))
+        if (idade >= 0) 
+        {
+            idades.push(idade)
+        }
+    } while (idade >= 0)
+
+    console.log("Idades armazenadas: " + idades.join(", "))
+
+</script>

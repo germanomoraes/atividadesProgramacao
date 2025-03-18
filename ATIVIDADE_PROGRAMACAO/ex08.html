@@ -1,0 +1,28 @@
+
+<script> 
+    /* Implementar um menu interativo com do-while para selecionar opções de um programa. */
+
+    let opcao;
+    
+    do {
+        opcao = Number(prompt("Menu Interativo:\n" + "1. Opção 1\n" + "2. Opção 2\n" +"3. Opção 3\n" + "0. Sair\n" + "Escolha uma opção:"))
+
+        switch (opcao) {
+            case 1:
+                alert("Você escolheu a Opção 1")
+                break;
+            case 2:
+               alert("Você escolheu a Opção 2")
+                break;
+            case 3:
+                alert("Você escolheu a Opção 3")
+                break;
+            case 0:
+                alert("Saindo do programa...")
+                break;
+            default:
+                alert("Opção inválida. Tente novamente.")
+        }
+    } while (opcao !== 0)
+
+</script>

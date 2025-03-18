@@ -1,0 +1,22 @@
+
+<script> 
+    /* Escreva um algoritmo que leia 50 valores e encontre o maior e o menor deles. Mostre o resultado. */
+
+    let maior = -Infinity
+    let menor = Infinity
+
+    for (let i = 0; i < 50; i++) {
+        let valor = Number(prompt("Digite o valor " + (i + 1) + ":"))
+        if (valor > maior) {
+            maior = valor
+        }
+        if (valor < menor) {
+            menor = valor
+        }
+    }
+
+    alert("O maior valor é: " + maior)
+    alert("O menor valor é: " + menor)
+
+</script>
+

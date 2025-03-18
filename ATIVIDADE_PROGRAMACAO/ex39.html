@@ -1,0 +1,52 @@
+
+<script>
+
+/* Uma empresa contratou 15 funcionários temporários. De acordo com o valor das
+vendas mensais, os funcionários adquirem pontos que determinarão seus salários ao
+final de cada mês. Sabe-se que esses funcionários trabalharão nos meses de novembro
+a janeiro do ano subsequente.
+Faça um programa que:
+a) Leia as pontuações nos três meses de cada funcionário;
+b) Calcule e mostre a pontuação geral de cada funcionário nos três meses;
+c) Calcule e mostre a média das pontuações de cada funcionário nos três meses;
+d) Determine e mostre a maior pontuação atingida entre os todos os funcionários nos
+três meses. */
+
+
+function calculateEmployeeScores() {
+        const employees = 15;
+        let employeeScores = [];
+        let highestScore = 0;
+
+        for (let i = 0; i < employees; i++) {
+            let scores = [];
+            for (let month of ['novembro', 'dezembro', 'janeiro']) {
+                const score = parseInt(prompt(`Digite a pontuação do funcionário ${i + 1} no mês de ${month}:`), 10);
+                if (isNaN(score) || score < 0) {
+                    alert('Por favor, insira uma pontuação válida.');
+                    month--; 
+                    continue;
+                }
+                scores.push(score);
+            }
+            employeeScores.push(scores);
+        }
+
+        let result = '';
+        for (let i = 0; i < employees; i++) {
+            const totalScore = employeeScores[i].reduce((a, b) => a + b, 0);
+            const averageScore = totalScore / 3;
+            highestScore = Math.max(highestScore, ...employeeScores[i]);
+
+            result += `Funcionário ${i + 1}:\n` +
+                      `Pontuação total: ${totalScore}\n` +
+                      `Média de pontuação: ${averageScore.toFixed(2)}\n\n`;
+        }
+
+        result += `Maior pontuação atingida entre todos os funcionários: ${highestScore}`;
+        alert(result);
+    }
+
+    calculateEmployeeScores();
+
+</script>

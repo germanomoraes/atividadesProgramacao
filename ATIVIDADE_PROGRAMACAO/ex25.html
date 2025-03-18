@@ -1,0 +1,37 @@
+
+<script>
+
+/* Crie um programa que continue lendo números inteiros até que o usuário digite o
+número zero. Ao final, o programa deve exibir:
+a. A média dos números positivos.
+b. A quantidade de números negativos digitados.
+Exemplo de entrada:
+4, -3, 6, -1, 0
+Saída esperada:
+Média dos positivos: 5.00
+Quantidade de negativos: 2 */
+
+function processNumbers() {
+        let sumPositives = 0;
+        let countPositives = 0;
+        let countNegatives = 0;
+        let number;
+
+        do {
+            number = parseInt(prompt('Digite um número inteiro (0 para sair):'), 10);
+            if (number > 0) {
+                sumPositives += number;
+                countPositives++;
+            } else if (number < 0) {
+                countNegatives++;
+            }
+        } while (number !== 0);
+
+        const averagePositives = countPositives > 0 ? (sumPositives / countPositives).toFixed(2) : 0;
+
+        alert(`Média dos positivos: ${averagePositives}\nQuantidade de negativos: ${countNegatives}`);
+    }
+
+    processNumbers();
+
+</script>

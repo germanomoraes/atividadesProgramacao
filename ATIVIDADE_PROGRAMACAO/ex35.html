@@ -1,0 +1,38 @@
+
+<script> 
+
+/* Uma loja tem 15 clientes cadastrados e deseja enviar uma correspondência a cada uma
+deles anunciando um bônus especial. Faça um programa que leia o nome do cliente e o
+valor de suas compras no ano passado. Calcule e mostre um bônus de 10% se o valor
+das compras for menor que R$1.000,00 e de 15%, caso contrário. */
+
+function calculateBonuses() {
+        const clients = 15;
+        let result = '';
+
+        for (let i = 0; i < clients; i++) {
+            const name = prompt(`Digite o nome do cliente ${i + 1}:`);
+            const purchaseValue = parseFloat(prompt(`Digite o valor das compras de ${name} no ano passado:`));
+
+            if (isNaN(purchaseValue)) {
+                alert('Por favor, insira um valor de compra válido.');
+                i--; 
+                continue;
+            }
+
+            let bonus;
+            if (purchaseValue < 1000) {
+                bonus = purchaseValue * 0.10;
+            } else {
+                bonus = purchaseValue * 0.15;
+            }
+
+            result += `Cliente: ${name}\nValor das compras: R$${purchaseValue.toFixed(2)}\nBônus: R$${bonus.toFixed(2)}\n\n`;
+        }
+
+        alert(result);
+    }
+
+    calculateBonuses();
+
+</script>

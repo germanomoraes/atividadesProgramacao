@@ -1,0 +1,22 @@
+
+<script>
+
+/* Escreva um programa que peça a senha ao usuário. O programa deve continuar
+solicitando a senha até que o usuário insira a senha correta, definida previamente no
+programa. Após o login bem-sucedido, exiba "Acesso permitido". */
+
+function requestPassword() {
+        const correctPassword = '1234'; // Defina a senha correta aqui
+        let userPassword;
+
+        do {
+            userPassword = prompt('Digite a senha:');
+        } while (userPassword !== correctPassword);
+
+        alert('Acesso permitido');
+    }
+
+    requestPassword();
+
+
+</script>

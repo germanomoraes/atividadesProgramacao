@@ -1,0 +1,36 @@
+
+<script>
+
+/* Escreva um programa que leia 10 números inteiros e exiba:
+a. A soma de todos os números.
+b. A quantidade de números pares.
+Exemplo de entrada:
+5, 8, 13, 6, 4, 11, 18, 7, 2, 10
+Saída esperada:
+Soma: 84
+Quantidade de pares: 5 */   
+
+function processNumbers() {
+        const input = prompt('Insira 10 números inteiros separados por vírgula:');
+        const numbers = input.split(',').map(Number);
+        if (numbers.length !== 10) {
+            alert('Por favor, insira exatamente 10 números.');
+            return;
+        }
+
+        let sum = 0;
+        let evenCount = 0;
+
+        for (let number of numbers) {
+            sum += number;
+            if (number % 2 === 0) {
+                evenCount++;
+            }
+        }
+
+        alert(`Soma: ${sum}\nQuantidade de pares: ${evenCount}`);
+    }
+
+    processNumbers();
+
+</script>

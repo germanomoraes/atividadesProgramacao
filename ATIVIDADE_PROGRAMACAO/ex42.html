@@ -1,0 +1,31 @@
+
+<script> 
+
+/* Desenvolver um algoritmo que leia a altura de 15 pessoas. Este programa deverá
+calcular e mostrar:
+a. A menor altura do grupo;
+b. A maior altura do grupo; */
+
+function findHeights() {
+        const people = 15;
+        let heights = [];
+
+        for (let i = 0; i < people; i++) {
+            const height = parseFloat(prompt(`Digite a altura da pessoa ${i + 1} em metros:`));
+            if (isNaN(height) || height <= 0) {
+                alert('Por favor, insira uma altura válida.');
+                i--; // Repetir a entrada para valores inválidos
+                continue;
+            }
+            heights.push(height);
+        }
+
+        const minHeight = Math.min(...heights);
+        const maxHeight = Math.max(...heights);
+
+        alert(`A menor altura do grupo é: ${minHeight} metros\nA maior altura do grupo é: ${maxHeight} metros`);
+    }
+
+    findHeights();
+
+</script>

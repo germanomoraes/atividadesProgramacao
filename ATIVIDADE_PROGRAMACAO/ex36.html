@@ -1,0 +1,34 @@
+
+<script>
+
+/* Faça um programa que leia cinco pares de valores (a,b), todos inteiros e positivos, um de cada vez.Mostre os números inteiros pares de a até b (inclusive). */
+
+function showEvenNumbers() {
+        const pairs = 5;
+        let result = '';
+
+        for (let i = 0; i < pairs; i++) {
+            const a = parseInt(prompt(`Digite o valor de a do par ${i + 1}:`), 10);
+            const b = parseInt(prompt(`Digite o valor de b do par ${i + 1}:`), 10);
+
+            if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                alert('Por favor, insira valores inteiros e positivos.');
+                i--; 
+                continue;
+            }
+
+            result += `Pares de ${a} até ${b}:\n`;
+            for (let j = a; j <= b; j++) {
+                if (j % 2 === 0) {
+                    result += `${j} `;
+                }
+            }
+            result += '\n\n';
+        }
+
+        alert(result);
+    }
+
+    showEvenNumbers();
+
+</script>

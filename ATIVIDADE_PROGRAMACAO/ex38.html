@@ -1,0 +1,66 @@
+
+<script>
+
+/* Foi feita uma estatística em cinco cidades brasileiras para coletar dados sobre acidentes
+de trânsito. Foram obtidos os seguintes dados:
+a. Código da cidade;
+b. Número de veículos de passeio (em 1999);
+c. Número de acidentes de trânsito com vítimas (em 1999).
+Deseja-se saber:
+I) Qual o maior e menor índice de acidentes de trânsito e a que cidade pertence;
+II) Qual a média de veículos nas cinco cidades juntas;
+III) Qual a média de acidentes de trânsito nas cidades com menos de 2.000 veículos de
+passeio. */
+
+function trafficStatistics() {
+        const cities = 5;
+        let cityData = [];
+        let totalVehicles = 0;
+        let totalAccidentsInSmallCities = 0;
+        let smallCityCount = 0;
+
+        for (let i = 0; i < cities; i++) {
+            const cityCode = prompt(`Digite o código da cidade ${i + 1}:`);
+            const numberOfVehicles = parseInt(prompt(`Digite o número de veículos de passeio na cidade ${cityCode} (em 1999):`), 10);
+            const numberOfAccidents = parseInt(prompt(`Digite o número de acidentes de trânsito com vítimas na cidade ${cityCode} (em 1999):`), 10);
+
+            if (isNaN(numberOfVehicles) || isNaN(numberOfAccidents) || numberOfVehicles < 0 || numberOfAccidents < 0) {
+                alert('Por favor, insira valores válidos.');
+                i--; 
+                continue;
+            }
+
+            cityData.push({ cityCode, numberOfVehicles, numberOfAccidents });
+            totalVehicles += numberOfVehicles;
+
+            if (numberOfVehicles < 2000) {
+                totalAccidentsInSmallCities += numberOfAccidents;
+                smallCityCount++;
+            }
+        }
+
+        let highestAccidentRate = { cityCode: null, numberOfAccidents: -Infinity };
+        let lowestAccidentRate = { cityCode: null, numberOfAccidents: Infinity };
+
+        for (let data of cityData) {
+            if (data.numberOfAccidents > highestAccidentRate.numberOfAccidents) {
+                highestAccidentRate = data;
+            }
+            if (data.numberOfAccidents < lowestAccidentRate.numberOfAccidents) {
+                lowestAccidentRate = data;
+            }
+        }
+
+        const averageVehicles = totalVehicles / cities;
+        const averageAccidentsInSmallCities = smallCityCount > 0 ? totalAccidentsInSmallCities / smallCityCount : 0;
+
+        alert(`Maior índice de acidentes: Cidade ${highestAccidentRate.cityCode}, Acidentes: ${highestAccidentRate.numberOfAccidents}\n` +
+              `Menor índice de acidentes: Cidade ${lowestAccidentRate.cityCode}, Acidentes: ${lowestAccidentRate.numberOfAccidents}\n` +
+              `Média de veículos nas cinco cidades: ${averageVehicles.toFixed(2)}\n` +
+              `Média de acidentes nas cidades com menos de 2.000 veículos: ${averageAccidentsInSmallCities.toFixed(2)}`);
+    }
+
+    trafficStatistics();
+
+
+</script>

@@ -1,0 +1,62 @@
+
+<script>
+
+/*Escreva um programa que solicite ao usuário dois números inteiros, a e b. O programa
+deve exibir todos os números múltiplos de 5 entre a e b.
+Requisitos:
+a. Use for para iterar pelos números no intervalo.
+b. Use um laço aninhado para verificar se o número é primo.
+Exemplo de entrada:
+Intervalo: 10 a 20
+Saída esperada:
+Números múltiplos de 5 entre 10 e 20:
+32. Implemente um menu que exiba as opções:
+a. Continuar
+b. Sair
+Continue executando até que o usuário escolha "Sair".*/
+
+function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function findMultiplesOfFive(a, b) {
+        let result = `Números múltiplos de 5 entre ${a} e ${b}:\n`;
+        for (let i = a; i <= b; i++) {
+            if (i % 5 === 0) {
+                result += `${i}`;
+                if (isPrime(i)) {
+                    result += " (primo)";
+                }
+                result += '\n';
+            }
+        }
+        alert(result);
+    }
+
+    function main() {
+        let continueProgram = true;
+        while (continueProgram) {
+            const a = parseInt(prompt("Digite o valor de a:"), 10);
+            const b = parseInt(prompt("Digite o valor de b:"), 10);
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Por favor, insira números inteiros válidos.");
+                continue;
+            }
+
+            findMultiplesOfFive(a, b);
+
+            const choice = prompt("Escolha uma opção:\n a. Continuar\n b. Sair").toLowerCase();
+            if (choice === "b") {
+                continueProgram = false;
+            }
+        }
+    }
+
+    main();
+
+</script>

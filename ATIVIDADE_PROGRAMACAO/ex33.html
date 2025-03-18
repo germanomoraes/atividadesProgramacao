@@ -1,0 +1,20 @@
+
+<script> 
+
+/* Faça um programa que verifique e mostre os números entre 1.000 e 2.000 (inclusive)
+que, quando divididos por 11, produzam um resto igual a 5. */
+
+function findNumbers() {
+        let result = 'Números entre 1.000 e 2.000 que, quando divididos por 11, produzem um resto igual a 5:\n';
+
+        for (let i = 1000; i <= 2000; i++) {
+            if (i % 11 === 5) {
+                result += `${i}\n`;
+            }
+        }
+
+        alert(result);
+    }
+        findNumbers();
+
+</script>

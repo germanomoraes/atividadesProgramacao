@@ -1,0 +1,53 @@
+
+<script> 
+    /* Em uma eleição presidencial existem quatro candidatos. Os votos são informados
+através de códigos. Os dados utilizados para a contagem dos votos obedecem à
+seguinte codificação: */
+
+let votosCandidato1 = 0
+    let votosCandidato2 = 0
+    let votosCandidato3 = 0
+    let votosCandidato4 = 0
+    let votosNulos = 0
+    let votosBrancos = 0
+    let codigo
+
+    do {
+        codigo = Number(prompt("Digite o código do voto:\n" + "1 - Candidato 1\n" +"2 - Candidato 2\n" +"3 - Candidato 3\n" + "4 - Candidato 4\n" + "5 - Voto Nulo\n" + "6 - Voto em Branco\n" + "0 - Encerrar votação"))
+
+        switch (codigo) {
+            case 1:
+                votosCandidato1++
+                break
+            case 2:
+                votosCandidato2++
+                break
+            case 3:
+                votosCandidato3++
+                break
+            case 4:
+                votosCandidato4++
+                break
+            case 5:
+                votosNulos++
+                break
+            case 6:
+                votosBrancos++
+                break
+            case 0:
+                console.log("Votação encerrada.")
+                break
+            default:
+                console.log("Código inválido. Tente novamente.")
+        }
+    } while (codigo !== 0)
+
+    alert("Resultado da votação:")
+    alert("Candidato 1: " + votosCandidato1 + " votos")
+    alert("Candidato 2: " + votosCandidato2 + " votos")
+    alert("Candidato 3: " + votosCandidato3 + " votos")
+    alert("Candidato 4: " + votosCandidato4 + " votos")
+    alert("Votos Nulos: " + votosNulos)
+    alert("Votos em Branco: " + votosBrancos)
+
+</script>

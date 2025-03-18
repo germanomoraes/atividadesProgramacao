@@ -1,0 +1,35 @@
+
+<script>
+
+/* Peça notas ao usuário até que ele escolha parar. Após isso, exiba a média das notas
+digitadas. */
+
+    function calculateAverage() {
+        let sum = 0;
+        let count = 0;
+        let continueEntering;
+
+        do {
+            const grade = parseFloat(prompt("Digite uma nota:"));
+            if (!isNaN(grade)) {
+                sum += grade;
+                count++;
+            } else {
+                alert("Por favor, insira um número válido.");
+            }
+
+            continueEntering = prompt("Deseja continuar inserindo notas? (s/n)").toLowerCase() === "s";
+        } while (continueEntering);
+
+        const average = count > 0 ? (sum / count).toFixed(2) : 0;
+        alert(`Média das notas: ${average}`);
+    }
+
+    calculateAverage();
+
+</script>
+
+
+
+
+

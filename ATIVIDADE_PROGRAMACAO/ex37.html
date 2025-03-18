@@ -1,0 +1,40 @@
+
+<script>
+
+/* Faça um programa que leia dez conjuntos de dois valores, o primeiro representando o
+número do aluno e o segundo representando a sua altura em centímetros.
+a. Encontre o aluno mais alto e o mais baixo.
+b. Mostre o número do aluno mais alto e o número do mais baixo junto com suas
+alturas. */
+
+function findTallestAndShortest() {
+        const students = 10;
+        let tallestStudent = { number: null, height: 0 };
+        let shortestStudent = { number: null, height: Infinity };
+
+        for (let i = 0; i < students; i++) {
+            const studentNumber = parseInt(prompt(`Digite o número do aluno ${i + 1}:`), 10);
+            const studentHeight = parseInt(prompt(`Digite a altura do aluno ${studentNumber} em centímetros:`), 10);
+
+            if (isNaN(studentNumber) || isNaN(studentHeight) || studentHeight <= 0) {
+                alert('Por favor, insira valores válidos.');
+                i--; 
+                continue;
+            }
+
+            if (studentHeight > tallestStudent.height) {
+                tallestStudent = { number: studentNumber, height: studentHeight };
+            }
+
+            if (studentHeight < shortestStudent.height) {
+                shortestStudent = { number: studentNumber, height: studentHeight };
+            }
+        }
+
+        alert(`Aluno mais alto: Número ${tallestStudent.number}, Altura ${tallestStudent.height} cm\n` +
+              `Aluno mais baixo: Número ${shortestStudent.number}, Altura ${shortestStudent.height} cm`);
+    }
+
+    findTallestAndShortest();
+
+</script>

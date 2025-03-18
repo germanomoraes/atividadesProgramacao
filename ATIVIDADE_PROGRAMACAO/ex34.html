@@ -1,0 +1,43 @@
+
+<script>
+
+/* Faça um programa que leia cinco grupos de quatro valores ( A, B, C, D) e mostre-os na ordem lida. Em seguida, mostre-os em ordem crescente e decrescente. */
+
+function readAndSortGroups() {
+        const groups = [];
+
+        for (let i = 0; i < 5; i++) {
+            const group = [];
+            for (let j = 0; j < 4; j++) {
+                const value = parseInt(prompt(`Digite o valor ${String.fromCharCode(65 + j)} do grupo ${i + 1}:`), 10);
+                if (!isNaN(value)) {
+                    group.push(value);
+                } else {
+                    alert('Por favor, insira um número válido.');
+                    j--; 
+                }
+            }
+            groups.push(group);
+        }
+
+        let result = 'Valores na ordem lida:\n';
+        groups.forEach((group, index) => {
+            result += `Grupo ${index + 1}: ${group.join(', ')}\n`;
+        });
+
+        result += '\nValores em ordem crescente:\n';
+        groups.forEach((group, index) => {
+            result += `Grupo ${index + 1}: ${group.slice().sort((a, b) => a - b).join(', ')}\n`;
+        });
+
+        result += '\nValores em ordem decrescente:\n';
+        groups.forEach((group, index) => {
+            result += `Grupo ${index + 1}: ${group.slice().sort((a, b) => b - a).join(', ')}\n`;
+        });
+
+        alert(result);
+    }
+
+    readAndSortGroups();
+
+</script>

@@ -1,0 +1,51 @@
+
+<script>
+
+/* Implemente um programa que simule um carrinho de compras. O programa deve:
+a. Mostrar uma lista de produtos com preços.
+b. Permitir ao usuário adicionar produtos ao carrinho.
+c. Exibir o total da compra e a quantidade de itens ao final.
+Requisitos:
+● Use um laço do-while para permitir que o usuário continue adicionando itens até decidir
+parar.
+Exemplo de execução: */
+
+function carrinho_de_compras() {
+        const produtos = [
+            { id: 1, nome: "Produto A", preco: 10.00 },
+            { id: 2, nome: "Produto B", preco: 20.00 },
+            { id: 3, nome: "Produto C", preco: 30.00 }
+        ];
+
+        let carrinho = [];
+        let total = 0;
+        let continue_comprando;
+
+        do {
+            let produtoList = "Lista de produtos:\n";
+            for (let produto of produtos) {
+                produtoList += `${produto.id}. ${produto.nome} - R$${produto.preco.toFixed(2)}\n`;
+            }
+            produtoList += "Digite o número do produto que deseja adicionar ao carrinho:";
+            const produtoId = parseInt(prompt(produtoList), 10);
+
+            const produto = produto.find(p => p.id === produtoId);
+            if (produto) {
+                carrinho.push(produto);
+                total += produto.preco;
+                alert(`${produto.nome} adicionado ao carrinho.`);
+            } else {
+                alert("Produto inválido.");
+            }
+
+            continue_comprando = prompt("Deseja continuar comprando? (s/n)").toLowerCase() === "s";
+        } while (continue_comprando);
+
+        const contadoritens = carrinho.length;
+        alert(`Total da compra: R$${total.toFixed(2)}\nQuantidade de itens: ${contadoritens}`);
+    }
+
+    carrinho_de_compras();
+
+
+</script>

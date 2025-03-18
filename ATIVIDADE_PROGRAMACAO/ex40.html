@@ -1,0 +1,57 @@
+
+<script>    
+
+/* Faça um programa que receba duas notas de seis alunos, calcule e mostre: • A média aritmética das duas notas de cada aluno; • A mensagem que está na tabela a seguir: Media aritmetica até 3,0 mensagem reprovado Media aritmetica Entre 3,0 e 7,0 mensagem Exame Media aritmetica Acima de 7,0 mensagem Aprovado • O total de alunos aprovados; • O total de alunos de exame; • Total de alunos reprovados; • A média da classe. */
+
+function calculateGrades() {
+        const students = 6;
+        let totalApproved = 0;
+        let totalExam = 0;
+        let totalFailed = 0;
+        let classTotal = 0;
+
+        let result = '';
+
+        for (let i = 0; i < students; i++) {
+            const grade1 = parseFloat(prompt(`Digite a primeira nota do aluno ${i + 1}:`));
+            const grade2 = parseFloat(prompt(`Digite a segunda nota do aluno ${i + 1}:`));
+
+            if (isNaN(grade1) || isNaN(grade2) || grade1 < 0 || grade1 > 10 || grade2 < 0 || grade2 > 10) {
+                alert('Por favor, insira notas válidas entre 0 e 10.');
+                i--; 
+                continue;
+            }
+
+            const average = (grade1 + grade2) / 2;
+            classTotal += average;
+
+            let message;
+            if (average <= 3.0) {
+                message = 'Reprovado';
+                totalFailed++;
+            } else if (average > 3.0 && average <= 7.0) {
+                message = 'Exame';
+                totalExam++;
+            } else {
+                message = 'Aprovado';
+                totalApproved++;
+            }
+
+            result += `Aluno ${i + 1}:\n` +
+                      `Média: ${average.toFixed(2)}\n` +
+                      `Mensagem: ${message}\n\n`;
+        }
+
+        const classAverage = classTotal / students;
+
+        result += `Total de alunos aprovados: ${totalApproved}\n` +
+                  `Total de alunos de exame: ${totalExam}\n` +
+                  `Total de alunos reprovados: ${totalFailed}\n` +
+                  `Média da classe: ${classAverage.toFixed(2)}`;
+
+        alert(result);
+    }
+
+    calculateGrades();
+
+</script>

@@ -1,0 +1,40 @@
+
+<script>
+
+/* Escrever um algoritmo que leia uma quantidade desconhecida de números e conte
+quantos deles estão nos seguintes intervalos: [0-25], [26-50], [51-75] e [76-100]. A
+entrada de dados deve terminar quando for lido um número negativo. */
+
+function countNumbersInIntervals() {
+        let count0to25 = 0;
+        let count26to50 = 0;
+        let count51to75 = 0;
+        let count76to100 = 0;
+
+        while (true) {
+            const value = parseFloat(prompt('Digite um número (ou um número negativo para terminar):'));
+            if (value < 0) {
+                break;
+            }
+
+            if (value >= 0 && value <= 25) {
+                count0to25++;
+            } else if (value >= 26 && value <= 50) {
+                count26to50++;
+            } else if (value >= 51 && value <= 75) {
+                count51to75++;
+            } else if (value >= 76 && value <= 100) {
+                count76to100++;
+            }
+        }
+
+        alert(`Quantidade de números nos intervalos:\n` +
+              `[0-25]: ${count0to25}\n` +
+              `[26-50]: ${count26to50}\n` +
+              `[51-75]: ${count51to75}\n` +
+              `[76-100]: ${count76to100}`);
+    }
+
+    countNumbersInIntervals();
+
+</script>
