@@ -1,0 +1,29 @@
+
+
+<script> 
+
+/* Considere que o maior número recebe peso 5 e os outros dois recebem peso 2,5.  */ 
+
+let numero1 = Number(prompt("Digite o primeiro número: "));
+let numero2 = Number(prompt("Digite o segundo número: "));
+let numero3 = Number(prompt("Digite o terceiro número: "));
+let maior = Math.max(numero1, numero2, numero3);
+
+let pesoMaior = 5;
+let pesoMenor = 2.5;
+
+let somaPonderada;
+if (maior === numero1) {
+    somaPonderada = (numero1 * pesoMaior) + (numero2 * pesoMenor) + (numero3 * pesoMenor);
+} else if (maior === numero2) {
+    somaPonderada = (numero1 * pesoMenor) + (numero2 * pesoMaior) + (numero3 * pesoMenor);
+} else {
+    somaPonderada = (numero1 * pesoMenor) + (numero2 * pesoMenor) + (numero3 * pesoMaior);
+}
+
+let somaPesos = pesoMaior + (2 * pesoMenor);
+let mediaPonderada = somaPonderada / somaPesos;
+    alert("A média ponderada dos números é: " + mediaPonderada.toFixed(2)); 
+    
+</script> 
+

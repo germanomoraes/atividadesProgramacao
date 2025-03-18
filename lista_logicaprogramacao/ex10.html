@@ -1,0 +1,14 @@
+
+<script> 
+
+/* Faça um programa que receba o salário de um funcionário e o percentual de aumento,
+calcule e mostre o valor do aumento e o novo salário. */
+
+let salarioAtual = Number(prompt("Digite o salário atual do funcionário: "));
+let percentualAumento = Number(prompt("Digite o percentual de aumento (em %): "));
+let valorAumento = salarioAtual * (percentualAumento / 100);
+let novoSalario = salarioAtual + valorAumento;
+
+alert("O valor do aumento é: " + valorAumento.toFixed(2) + "\nO novo salário é: " + novoSalario.toFixed(2));
+
+</script>

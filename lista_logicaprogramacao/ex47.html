@@ -1,0 +1,18 @@
+
+
+<script> 
+
+/* Escreva um programa que leia uma letra e mostre se ela é vogal ou consoante.  */ 
+
+let letra = prompt("Digite uma letra: ").toLowerCase();
+    if (letra.length === 1 && letra.match(/[a-z]/i)) {
+    if ("aeiou".includes(letra)) {
+        alert("A letra " + letra + " é uma vogal.");
+    } else {
+        alert("A letra " + letra + " é uma consoante.");
+    }
+} else {
+    alert("Por favor, insira uma única letra.");
+}
+
+</script> 

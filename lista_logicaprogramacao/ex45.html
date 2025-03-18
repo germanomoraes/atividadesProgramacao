@@ -1,0 +1,20 @@
+
+
+<script> 
+
+/* Escreva um programa que leia 3 números e calcule a média ponderada entre eles. */
+
+let numero1 = Number(prompt("Digite o primeiro número: "));
+let numero2 = Number(prompt("Digite o segundo número: "));
+let numero3 = Number(prompt("Digite o terceiro número: "));
+
+let peso1 = 1;
+let peso2 = 2;
+let peso3 = 3;
+
+let somaPonderada = (numero1 * peso1) + (numero2 * peso2) + (numero3 * peso3);
+let somaPesos = peso1 + peso2 + peso3;
+let mediaPonderada = somaPonderada / somaPesos;
+    alert("A média ponderada dos números é: " + mediaPonderada.toFixed(2));   
+</script> 
+

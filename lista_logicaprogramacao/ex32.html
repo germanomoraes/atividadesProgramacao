@@ -1,0 +1,17 @@
+
+<script> 
+
+
+/* Um circuito elétrico é composto de duas resistências R1 e R2 em paralelo, e ambas em
+sequência de uma resistência R3. Faça um algoritmo para calcular a resistência
+equivalente desse circuito.  */ 
+
+let R1 = Number(prompt("Digite o valor da resistência R1: "));
+let R2 = Number(prompt("Digite o valor da resistência R2: "));
+let R3 = Number(prompt("Digite o valor da resistência R3: "));
+let Rparalelo = (R1 * R2) / (R1 + R2);
+let Requivalente = Rparalelo + R3;
+    alert("A resistência equivalente do circuito é: " + Requivalente.toFixed(2) + " ohms"); 
+    
+</script> 
+

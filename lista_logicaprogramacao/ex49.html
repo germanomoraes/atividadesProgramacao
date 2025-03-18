@@ -1,0 +1,44 @@
+
+
+
+<script>
+
+/* Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+Escreva um algoritmo que leia o número de litros vendidos e o tipo de combustível
+(codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser
+pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,70 e o preço do litro do álcool é R$ 1,90.  */ 
+
+let litros = Number(prompt("Digite o número de litros vendidos: "));
+let tipoCombustivel = prompt("Digite o tipo de combustível (A-álcool, G-gasolina): ").toUpperCase();
+
+const precoGasolina = 2.70;
+const precoAlcool = 1.90;
+
+let precoPorLitro;
+let desconto;
+    if (tipoCombustivel === 'A') {
+    precoPorLitro = precoAlcool;
+    if (litros <= 25) {
+        desconto = 0.02;
+} else {
+        desconto = 0.04;
+}
+} else if (tipoCombustivel === 'G') {
+    precoPorLitro = precoGasolina;
+    if (litros <= 25) {
+        desconto = 0.03;
+} else {
+        desconto = 0.05;
+}
+} else {
+    alert("Tipo de combustível inválido. Por favor, insira 'A' para álcool ou 'G' para gasolina.");
+    throw new Error("Tipo de combustível inválido.");
+}
+
+let valorTotal = litros * precoPorLitro;
+let valorDesconto = valorTotal * desconto;
+let valorAPagar = valorTotal - valorDesconto;
+    alert("O valor a ser pago pelo cliente é: R$ " + valorAPagar.toFixed(2));
+
+</script> 
+

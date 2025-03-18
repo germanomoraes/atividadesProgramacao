@@ -1,0 +1,16 @@
+
+<script> 
+
+/* Leia a razão de uma PA (Progressão Aritmética) e o seu primeiro e último termos e
+informe a soma dos elementos dessa PA */
+
+let Razao = Number(prompt("Digite a razão da PA: "));
+let primeiroTermo = Number(prompt("Digite o primeiro termo da PA: "));
+let ultimoTermo = Number(prompt("Digite o último termo da PA: "));
+let numeroTermos = ((ultimoTermo - primeiroTermo) / Razao) + 1;
+let somaPA = (numeroTermos / 2) * (primeiroTermo + ultimoTermo);
+    alert("A soma dos elementos da PA é: " + somaPA.toFixed(2));
+    
+</script> 
+
+

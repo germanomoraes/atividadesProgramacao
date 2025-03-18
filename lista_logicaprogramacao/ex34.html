@@ -1,0 +1,18 @@
+
+
+<script>
+
+/* Num dia de sol, você deseja medir a altura de um prédio, porém, a trena não é
+suficientemente longa. Assumindo que seja possível medir sua sombra e a do prédio no
+chão, e que você lembre da sua altura, faça um programa para ler os dados necessários e
+calcular a altura do prédio.  */ 
+
+let suaAltura = Number(prompt("Digite a sua altura (em metros): "));
+let suaSombra = Number(prompt("Digite o comprimento da sua sombra (em metros): "));
+let sombraPredio = Number(prompt("Digite o comprimento da sombra do prédio (em metros): "));
+let alturaPredio = (sombraPredio * suaAltura) / suaSombra;
+    alert("A altura do prédio é: " + alturaPredio.toFixed(2) + " metros");
+
+</script> 
+
+

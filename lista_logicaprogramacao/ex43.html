@@ -1,0 +1,40 @@
+
+
+<script>
+
+/* Escreva um programa que leia o número equivalente ao mês e imprima a quantidade de
+dias deste mês.Escreva um programa que leia o número equivalente ao mês e imprima a quantidade de dias deste mês.*/ 
+
+let mes = Number(prompt("Digite o número equivalente ao mês (1-12): "));
+
+let dias;
+switch (mes) {
+    case 1: // Janeiro
+    case 3: // Março
+    case 5: // Maio
+    case 7: // Julho
+    case 8: // Agosto
+    case 10: // Outubro
+    case 12: // Dezembro
+        dias = 31;
+        break;
+    case 4: // Abril
+    case 6: // Junho
+    case 9: // Setembro
+    case 11: // Novembro
+        dias = 30;
+        break;
+    case 2: // Fevereiro
+        dias = 28; // Considerando anos não bissextos
+        break;
+    default:
+        dias = "inválido";
+}
+
+if (dias === "inválido") {
+    alert("Número do mês inválido. Por favor, insira um número entre 1 e 12.");
+} else {
+    alert("O mês " + mes + " tem " + dias + " dias.");
+}
+
+</script> 
