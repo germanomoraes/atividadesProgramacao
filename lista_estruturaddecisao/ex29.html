@@ -1,0 +1,46 @@
+
+<script> 
+
+/* Uma empresa paga seus empregados como gerentes (que recebem um salário fixo mensal),trabalhadores comuns (que recebem um salário fixo por hora para as primeiras 40 horas de trabalhosemanal e 1,5 vez seu salário por hora normal para as horas extras trabalhadas), trabalhadores porcomissão (que recebem R$ 250,00 mais 5,7% de suas vendas brutas) ou trabalhadores porempreitada (que recebem uma quantia fixa por item para cada um dos itens produzidos – cadatrabalhador por empreitada dessa empresa trabalha com apenas um tipo de item). Escreva umprograma que calcule o pagamento semanal de cada empregado. Cada tipo de empregado tem seucódigo próprio de pagamento: gerentes possuem código 1; trabalhadores comuns, o código 2;trabalhadores por comissão, o código 3; e trabalhadores por empreitada, o código 4. Use um
+switch-case para calcular o pagamento de cada empregado com base em seu código depagamento. Dentro do switch-case peça ao usuário para entrar com os dados adequados ànecessidade de seu programa para calcular o pagamento de cada funcionário com base em seu código. */
+        
+function CalcularPagamento() {
+        
+let codigoPagamento = Number(prompt("Digite o código de pagamento do empregado (1, 2, 3, 4):"));
+
+let pagamento;
+    switch (codigoPagamento) {
+    case 1:
+let salarioMensal = Number(prompt("Digite o salário fixo mensal do gerente:"));
+    pagamento = salarioMensal / 4; 
+break;
+    case 2:
+let salarioHora = Number(prompt("Digite o salário por hora do trabalhador comum:"));
+let horasTrabalhadas = Number(prompt("Digite o número de horas trabalhadas na semana:"));
+    if (horasTrabalhadas <= 40) {
+pagamento = salarioHora * horasTrabalhadas;
+} else {
+let horasExtras = horasTrabalhadas - 40;
+    pagamento = (salarioHora * 40) + (salarioHora * 1.5 * horasExtras);
+}
+break;
+    case 3:
+let vendasBrutas = Number(prompt("Digite o valor das vendas brutas do trabalhador por comissão:"));
+    pagamento = 250 + (vendasBrutas * 0.057);
+break;
+    case 4:
+               
+let quantiaPorItem = Number(prompt("Digite a quantia fixa por item produzido:"));
+let itensProduzidos = Number(prompt("Digite o número de itens produzidos:"));
+pagamento = quantiaPorItem * itensProduzidos;
+break;
+default:
+    alert("Código de pagamento inválido.");
+return;
+}
+    alert("O pagamento semanal do empregado é: R$ " + pagamento.toFixed(2));
+}
+
+CalcularPagamento();   
+   
+</script> 

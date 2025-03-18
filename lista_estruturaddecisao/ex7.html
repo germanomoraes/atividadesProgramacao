@@ -1,0 +1,24 @@
+
+<script> 
+
+/* Escreva um programa que calcule o salário semanal de um trabalhador. As entradas são o número de horas trabalhadas na semana e o valor da hora. Até 40 h/semana não se acrescenta nenhum adicional. Acima de 40h e até 60h há um bônus de 50% para essas horas. Acima de 60h há um bônus de 100% para essas horas. */
+        
+function calcularSalarioSemanal() {
+       
+let horasTrabalhadas = Number(prompt("Digite o número de horas trabalhadas na semana:"));
+let valorHora = Number(prompt("Digite o valor da hora:"));
+
+let salarioSemanal = 0;
+    if (horasTrabalhadas <= 40) {
+salarioSemanal = horasTrabalhadas * valorHora;
+} else if (horasTrabalhadas <= 60) {
+salarioSemanal = (40 * valorHora) + ((horasTrabalhadas - 40) * valorHora * 1.5);
+} else {
+salarioSemanal = (40 * valorHora) + (20 * valorHora * 1.5) + ((horasTrabalhadas - 60) * valorHora * 2);
+}
+    alert("O salário semanal é: R$ " + salarioSemanal.toFixed(2));
+}
+
+calcularSalarioSemanal(); 
+  
+</script>

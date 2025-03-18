@@ -1,0 +1,54 @@
+
+<script> 
+
+/* Faça um programa que receba o código correspondente de um funcionário e seu salário atual e mostre o cargo, o valor do aumento e seu novo salário. Os cargos estão na tabela abaixo. CÓDIGO CARGO PERCENTUAL:
+1 ESCRITUÁRIO 50 %
+2 SECRETÁRIO 35 %
+3 CAIXA 20 %
+4 GERENTE 10 %
+5 DIRETOR NÃO TEM AUMENTO */
+    
+function CalcularAumento() {
+        
+let codigo = Number(prompt("Digite o código do funcionário:"));
+let salarioAtual = Number(prompt("Digite o salário atual do funcionário:"));
+
+let cargo;
+let percentualAumento;
+let novoSalario;
+
+switch (codigo) {
+    case 1:
+cargo = "Escrituário";
+percentualAumento = 0.50;
+break;
+    case 2:
+cargo = "Secretário";
+percentualAumento = 0.35;
+break;
+    case 3:
+cargo = "Caixa";
+percentualAumento = 0.20;
+break;
+    case 4:
+cargo = "Gerente";
+percentualAumento = 0.10;
+break;
+    case 5:
+cargo = "Diretor";
+percentualAumento = 0.00;
+break;
+default:
+    alert("Código inválido. Por favor, insira um código válido.");
+return;
+
+}
+
+let valorAumento = salarioAtual * percentualAumento;
+novoSalario = salarioAtual + valorAumento;
+    alert("Cargo: " + cargo + "\nValor do aumento: R$ " + valorAumento.toFixed(2) + "\nNovo salário: R$ " + novoSalario.toFixed(2));
+}
+ 
+CalcularAumento();
+        
+</script> 

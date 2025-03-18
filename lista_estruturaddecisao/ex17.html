@@ -1,0 +1,50 @@
+
+<script> 
+
+/* Elaborar um programa para ler um número de 1 a 10 e mostra-lo por extenso ou a mensagem “ Não foi possível mostrar seu extenso”. */
+        
+function mostrarNumeroPorExtenso() {
+       
+let numero = Number(prompt("Digite um número de 1 a 10:"));
+let numeroPorExtenso;
+    switch (numero) {
+    case 1:
+numeroPorExtenso = "Um";
+break;
+    case 2:
+numeroPorExtenso = "Dois";
+break;
+    case 3:
+numeroPorExtenso = "Três";
+break;
+    case 4:
+numeroPorExtenso = "Quatro";
+break;
+    case 5:
+numeroPorExtenso = "Cinco";
+break;
+    case 6:
+numeroPorExtenso = "Seis";
+break;
+    case 7:
+numeroPorExtenso = "Sete";
+break;
+    case 8:
+numeroPorExtenso = "Oito";
+break;
+    case 9:
+numeroPorExtenso = "Nove";
+break;
+    case 10:
+numeroPorExtenso = "Dez";
+break;
+    default:
+    alert("Não foi possível mostrar seu extenso.");
+return;
+}
+    alert("O número por extenso é: " + numeroPorExtenso);
+}
+
+mostrarNumeroPorExtenso();        
+
+</script> 

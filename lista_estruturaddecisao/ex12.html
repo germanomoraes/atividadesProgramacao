@@ -1,0 +1,35 @@
+
+<script> 
+
+/* Faça um programa que receba o salário de um funcionário, calcule e mostre o novo salário, acrescido debonificação e de auxilio escola. Salário Bonificação Até R$ 500,00 5 % do salário Entre R$ 500,00 e R$ 1.200,00 2% do salário Acima de R$ 1.200,00 Sem bonificação Salário Auxilio escola Até R$ 600,00 R$ 150,00 Mais que R$ 600,00 R$ 100,00 */
+ 
+function CalcularNovoSalario() {
+        
+let salarioAtual = Number(prompt("Digite o salário atual do funcionário:"));
+
+let bonificacao;
+    if (salarioAtual <= 500) {
+    bonificacao = salarioAtual * 0.05;
+} else if (salarioAtual <= 1200) {
+    bonificacao = salarioAtual * 0.12;
+} else {
+    bonificacao = 0;
+}
+
+let auxilioEscola;
+    if (salarioAtual <= 600) {
+    auxilioEscola = 150;
+} else {
+    auxilioEscola = 100;
+}
+
+let novoSalario = salarioAtual + bonificacao + auxilioEscola;
+    alert("Salário atual: R$ " + salarioAtual.toFixed(2) + 
+"\nBonificação: R$ " + bonificacao.toFixed(2) + 
+"\nAuxílio escola: R$ " + auxilioEscola.toFixed(2) + 
+"\nNovo salário: R$ " + novoSalario.toFixed(2));
+}
+ 
+CalcularNovoSalario();
+
+</script>

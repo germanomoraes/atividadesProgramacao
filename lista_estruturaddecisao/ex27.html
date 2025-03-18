@@ -1,0 +1,34 @@
+
+<script> 
+
+/* A tabela abaixo foi copiada do website da Receita Federal, e traz as alíquotas do impoto de renda de pessoa
+física retido na fonte para o exercício de 2013: */
+ 
+function CalcularImpostoDeRenda() {
+
+let baseCalculo = Number(prompt("Digite a base de cálculo mensal em R$:"));
+let aliquota, parcelaDeduzir, impostoDeRenda;
+
+if (baseCalculo <= 1637.11) {
+    aliquota = 0;
+    parcelaDeduzir = 0;
+} else if (baseCalculo <= 2453.50) {
+    aliquota = 7.5;
+    parcelaDeduzir = 122.78;
+} else if (baseCalculo <= 3271.38) {
+    aliquota = 15.0;
+    parcelaDeduzir = 306.80;
+} else if (baseCalculo <= 4087.65) {
+    aliquota = 22.5;
+    parcelaDeduzir = 552.15;
+} else {
+    aliquota = 27.5;
+    parcelaDeduzir = 756.53;
+}
+    impostoDeRenda = (baseCalculo * (aliquota / 100)) - parcelaDeduzir;
+    alert("O imposto de renda retido na fonte é: R$ " + impostoDeRenda.toFixed(2));
+}
+    CalcularImpostoDeRenda();
+   
+   
+</script> 

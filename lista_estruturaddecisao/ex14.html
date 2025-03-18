@@ -1,0 +1,28 @@
+
+<script> 
+
+/* Elaborar um programa para ler um número de 1 a 12 e informar o trimestre correspondente, sendo Jan/Fev/Mar o primeiro trimestre. Se for um número incorreto, mostrar mensagem de erro. */
+        
+function InformarTrimestre() {
+       
+let numero = Number(prompt("Digite um número de 1 a 12:"));
+let trimestre;
+    if (numero >= 1 && numero <= 3) {
+        trimestre = "Primeiro trimestre (Jan/Fev/Mar)";
+} else if (numero >= 4 && numero <= 6) {
+        trimestre = "Segundo trimestre (Abr/Mai/Jun)";
+} else if (numero >= 7 && numero <= 9) {
+        trimestre = "Terceiro trimestre (Jul/Ago/Set)";
+} else if (numero >= 10 && numero <= 12) {
+        trimestre = "Quarto trimestre (Out/Nov/Dez)";
+} else {
+        alert("Número inválido. Por favor, insira um número de 1 a 12.");
+return;
+}
+
+alert("O trimestre correspondente é: " + trimestre);
+}
+
+InformarTrimestre();
+
+</script> 

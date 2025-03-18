@@ -1,0 +1,24 @@
+
+<script> 
+
+/* Suponha que você está programando um módulo contador de cédulas para caixa s eletrônicos. Escreva um programa que informa com quantas cédulas de Real podemos representar um dado valor. Exemplo de resposta: R$ 218 = 2 cédulas de 100, 1 cédula de 10, 1 cédula de 5, 1 cédula de 2 e 1 cédula de 1. Procure minimizar o número de cédulas usadas. Desconsidere valores com centavos, e suponha que a máquina sempre tem disponíveis as cédulas necessárias. */
+        
+function ContadordeCedulas(valor) {
+let cedulas = [100, 50, 20, 10, 5, 2, 1];
+let resultado = "";
+
+for (let i = 0; i < cedulas.length; i++) {
+let quantidade = Math.floor(valor / cedulas[i]);
+    if (quantidade > 0) {
+resultado += quantidade + " cédula(s) de R$ " + cedulas[i] + "\n";
+    valor %= cedulas[i];
+}}
+
+return resultado;
+}
+
+let valor = Number(prompt("Digite o valor em Reais (sem centavos):"));
+let resultado = contadordeCedulas(valor);
+    alert("Para o valor de R$ " + valor + ", você precisará de:\n" + resultado);
+
+</script>

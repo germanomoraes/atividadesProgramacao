@@ -1,0 +1,35 @@
+
+<script> 
+
+/* Zeca está organizando um bolão de futebol. Segundo suas regras, os apostadores informam o placar do jogo e ganham 10 pontos se acertarem o vencedor ou se acertarem que foi empate, e ganham mais 5 pontos para o placar de cada time que acertarem. A tabela a seguir dá um exemplo, considerando que o placar real foi 3x2: */
+        
+function CalcularPontuacao() {
+        
+let placarReal = prompt("Digite o placar real do jogo (formato: XxY):").split("x");
+let placarRealTime1 = Number(placarReal[0]);
+let placarRealTime2 = Number(placarReal[1]);
+
+let placarApostado = prompt("Digite o placar apostado (formato: XxY):").split("x");
+let apostadoTime1 = Number(placarApostado[0]);
+let apostadoTime2 = Number(placarApostado[1]);
+
+let pontos = 0;
+
+    if ((placarRealTime1 > placarRealTime2 && apostadoTime1 > apostadoTime2) ||
+(placarRealTime1 < PlacarRealTime2 && apostadoTime1 < apostadoTime2) ||
+(placarRealTime1 === placarRealTime2 && apostadoTime1 === apostadoTime2)) {
+pontos += 10;
+}
+    if (placarRealTime1 === apostadoTime1) {
+        pontos += 5;
+}
+    if (placarRealTime2 === apostadoTime2) {
+        pontos += 5;
+}
+    alert("A pontuação do apostador é: " + pontos);}
+
+    CalcularPontuacao();
+
+
+</script> 
+    

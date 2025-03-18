@@ -1,0 +1,44 @@
+
+<script> 
+
+/* Elaborar um programa que execute as 4 operações básicas da matemática (adição – subtração – divisão- multiplicação) este programa deverá ter um menu com essas 4 opções, irá receber dois números e o usuário irá selecionar a operação de acordo com sua necessidade. */
+        
+function executarOperacao() {
+       
+let opcao = Number(prompt("Menu de opções:\n1. Adição\n2. Subtração\n3. Divisão\n4. Multiplicação\nDigite a opção desejada:"));
+
+let num1 = Number(prompt("Digite o primeiro número:"));
+let num2 = Number(prompt("Digite o segundo número:"));
+
+let resultado;
+    switch (opcao) {
+    case 1:
+resultado = num1 + num2;
+    alert("O resultado da adição é: " + resultado);
+break;
+    case 2:
+resultado = num1 - num2;
+    alert("O resultado da subtração é: " + resultado);
+break;
+    case 3:
+        if (num2 !== 0) {
+resultado = num1 / num2;
+    alert("O resultado da divisão é: " + resultado);
+} else {
+    alert("Divisão por zero não é permitida.");
+}
+break;
+    case 4:
+resultado = num1 * num2;
+    alert("O resultado da multiplicação é: " + resultado);
+break;
+    default:
+    alert("Opção inválida. Por favor, escolha uma opção válida.");
+executarOperacao(); 
+break;
+}
+}
+
+executarOperacao();
+
+</script> 

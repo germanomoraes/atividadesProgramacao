@@ -1,0 +1,36 @@
+
+<script> 
+
+/* Faça um programa que receba do usuário o número de lados e o tamanho dos lados de um polígono regular
+e imprima o valor da área do polígono. O programa deve utilizar uma estrutura switch-case para decidir que
+fórmula de cálculo utilizar, de acordo com o número de lados do polígono. Se o número de lados for diferente
+de 3, 4 ou 6 o programa deve informar: “não sei calcular a área”. Áreas:
+a. Triângulo: A = L*L*1.73/4
+b. Quadrado: A = L*L
+c. Hexágono: A = 6*L*L*1.73/4; */
+
+function calcularAreaPoligono() {
+
+let numeroLados = Number(prompt("Digite o número de lados do polígono (3, 4 ou 6):"));
+let tamanhoLado = Number(prompt("Digite o tamanho dos lados do polígono:"));
+
+let area;
+    switch (numeroLados) {
+    case 3:
+area = (tamanhoLado * tamanhoLado * 1.73) / 4;
+break;
+    case 4:
+area = tamanhoLado * tamanhoLado;
+break;
+    case 6:
+area = (6 * tamanhoLado * tamanhoLado * 1.73) / 4;
+break;
+    default:
+        alert("Não sei calcular a área.");
+return;
+}
+        alert("A área do polígono é: " + area.toFixed(2));
+}
+    calcularAreaPoligono();
+               
+</script> 

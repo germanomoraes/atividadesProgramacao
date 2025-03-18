@@ -1,0 +1,37 @@
+
+<script> 
+
+/* Criar um programa para ler as letras iniciais do estado civil e do sexo de uma pessoa e mostrar a descrição: Casado (a); Solteiro(a); Viúvo(a); Desquitado(a); Divorciado (a); ou inválido. */
+ 
+function InformarEstadoCivil() {
+    
+let estadoCivil = prompt("Digite a letra inicial do estado civil (C, S, V, D, Q):").toUpperCase();
+let sexo = prompt("Digite a letra inicial do sexo (M, F):").toUpperCase();
+let descricao;
+    switch (estadoCivil) {
+    case 'C':
+descricao = "Casado(a)";
+break;
+    case 'S':
+descricao = "Solteiro(a)";
+break;
+    case 'V':
+descricao = "Viúvo(a)";
+break;
+    case 'D':
+descricao = "Divorciado(a)";
+break;
+    case 'Q':
+descricao = "Desquitado(a)";
+break;
+    default:
+descricao = "Inválido";
+break;
+}
+    alert("Estado civil: " + descricao);
+}
+
+InformarEstadoCivil();
+
+        
+</script> 

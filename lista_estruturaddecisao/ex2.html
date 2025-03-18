@@ -1,0 +1,33 @@
+
+<script> 
+
+/* A nota final de um estudante é calculada a partir de 3 notas atribuídas, respectivamente, a um trabalho de laboratório, a uma avaliação semestral e a um exame final. A média das três notas mencionadas obedece aos pesos a seguir:  */
+    
+let notaTrabalho = Number(prompt("Digite a nota do trabalho de laboratório:"));
+let notaAvaliacao = Number(prompt("Digite a nota da avaliação semestral:"));
+let notaExame = Number(prompt("Digite a nota do exame final:"));
+
+let pesoTrabalho = 2;
+let pesoAvaliacao = 3;
+let pesoExame = 5;
+
+let notaFinal = (notaTrabalho * pesoTrabalho + notaAvaliacao * pesoAvaliacao + notaExame * pesoExame) / (pesoTrabalho + pesoAvaliacao + pesoExame);
+     
+let conceito;
+    if (notaFinal >= 8.0 && notaFinal <= 10.0) {
+    conceito = 'A';
+} else if (notaFinal >= 7.0 && notaFinal < 8.0) {
+    conceito = 'B';
+} else if (notaFinal >= 6.0 && notaFinal < 7.0) {
+    conceito = 'C';
+} else if (notaFinal >= 5.0 && notaFinal < 6.0) {
+    conceito = 'D';
+} else {
+    conceito = 'E';
+}
+        
+alert("A nota final é: " + notaFinal.toFixed(2) + "\nO conceito é: " + conceito);
+
+CalcularNotaFinal();
+
+</script>

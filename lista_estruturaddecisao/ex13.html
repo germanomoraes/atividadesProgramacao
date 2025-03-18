@@ -1,0 +1,41 @@
+
+<script> 
+
+/* Construir um programa para ler um número de 1 a 7 e informar o dia da semana correspondente, sendo domingo o dia de número 1. Se o número não corresponder a um dia da semana, é mostrada uma mensagemde erro.  */
+  
+function InformarDiaDaSemana() {
+       
+let numero = Number(prompt("Digite um número de 1 a 7:"));
+let diaDaSemana;
+switch (numero) {
+    case 1:
+diaDaSemana = "Domingo";
+break;
+    case 2:
+diaDaSemana = "Segunda-feira";
+break;
+    case 3:
+diaDaSemana = "Terça-feira";
+break;
+    case 4:
+diaDaSemana = "Quarta-feira";
+break;
+    case 5:
+diaDaSemana = "Quinta-feira";
+break;
+    case 6:
+diaDaSemana = "Sexta-feira";
+break;
+    case 7:
+diaDaSemana = "Sábado";
+break;
+default:
+    alert("Número inválido. Por favor, insira um número de 1 a 7.");
+return;
+}
+    alert("O dia da semana correspondente é: " + diaDaSemana);
+}
+
+InformarDiaDaSemana();
+        
+</script> 

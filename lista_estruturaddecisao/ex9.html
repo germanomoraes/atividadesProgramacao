@@ -1,0 +1,20 @@
+
+<script> 
+
+/* Faça um programa para que receba 3 números e mostre-os em ordem crescente. Suponha que o usuário digitará 3 números diferentes. */
+        
+function OrdenarNumeros() {
+        
+let num1 = Number(prompt("Digite o primeiro número:"));
+let num2 = Number(prompt("Digite o segundo número:"));
+let num3 = Number(prompt("Digite o terceiro número:"));
+let numeros = [num1, num2, num3];
+    numeros.sort(function(a, b) {
+return a - b;
+});
+    alert("Os números em ordem crescente são: " + numeros.join(", "));
+}
+
+OrdenarNumeros();
+
+</script> 

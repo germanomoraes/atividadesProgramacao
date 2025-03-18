@@ -1,0 +1,36 @@
+
+<script> 
+
+/* Escrever um programa para ler a categoria de uma carteira de motorista e mostrar qual é o tipo de veículo permitido para dirigir. */
+
+function informarTipoVeiculo() {
+
+let categoria = prompt("Digite a categoria da carteira de motorista (A, B, C, D, E):").toUpperCase();
+
+let tipoVeiculo;
+    switch (categoria) {
+    case 'A':
+tipoVeiculo = "Motos e Triciclos";
+break;
+    case 'B':
+tipoVeiculo = "Carros";
+break;
+    case 'C':
+tipoVeiculo = "Veículos de Carga acima de 3,5 toneladas";
+break;
+    case 'D':
+tipoVeiculo = "Veículos com mais de oito passageiros";
+break;
+    case 'E':
+tipoVeiculo = "Veículos com unidade acoplada acima de 6 toneladas";
+break;
+    default:
+tipoVeiculo = "Categoria inválida";
+break;
+}
+    alert("Tipo de veículo permitido: " + tipoVeiculo);
+}
+
+informarTipoVeiculo();
+        
+</script> 
